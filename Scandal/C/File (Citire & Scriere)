@@ -21,3 +21,8 @@ int main()
 
     return 0;
 }
+
+
+//fin.get(propozitie, 100);
+//echivalent cu
+//fgets(propozitie, 100, fin);
