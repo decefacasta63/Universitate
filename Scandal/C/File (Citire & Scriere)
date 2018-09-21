@@ -25,4 +25,4 @@ int main()
 
 //fin.get(propozitie, 100);
 //echivalent cu
-//fgets(propozitie, 100, fin);
+//fgets(propozitie, 100, fin); propozitie[strlen(propozitie)-1] = NULL; //Deoarece ia si ultimul caracter: ENTER sau ENDL
