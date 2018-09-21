@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    FILE *f; //fin
+    FILE *g; //fout
+
+    f = fopen("date.in", "r");
+    g = fopen("date.out", "w");
+
+    int x;
+
+    //Citire din FILE
+    fscanf(f, "%d", &x);
+    fprintf(g, "%d", x);
+
+    //Citire din tastatura - citirea se opreste cu CTRL-Z, daca nu se specifica numarul de caractere
+    fscanf(stdin, "%d", &x);
+    fprintf(stdout, "%d", x);
+
+    return 0;
+}
