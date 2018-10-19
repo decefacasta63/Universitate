@@ -12,7 +12,7 @@ int main()
 {
     //N-avem bani de "operatori combinati"
     int a,b,c;
-    int rad1, rad2;
+    float rad1, rad2;
     scanf("%d%d%d", &a, &b, &c);
     int delta = b*b - 4*a*c;
 
@@ -20,12 +20,12 @@ int main()
     {
         rad1 = (-b + sqrt(delta))/(2*a);
         rad2 = (-b - sqrt(delta))/(2*a);
-        printf("%d si %d", rad1, rad2);
+        printf("%f si %f", rad1, rad2);
     }
     else if (delta==0)
     {
         rad1 = (-b)/(2*a);
-        printf("%d", rad1);
+        printf("%f", rad1);
     }
     else printf("Nu are radacini reale si mi-e lene sa fac un caz pentru cele complexe.");
 
