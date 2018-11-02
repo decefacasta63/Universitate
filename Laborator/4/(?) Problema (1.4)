@@ -1,0 +1,45 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    char x[20],y[20];
+    int xlung,ylung;
+    int i;
+
+    //Merge pentru cazul in care x este mai mare sau egal cu y.
+    //Pentru al doilea caz, trebuie interschimbate variabilele.
+    scanf("%s%s", &x, &y);
+
+    xlung = strlen(x);
+    ylung = strlen(y);
+
+    int vx[xlung+1],vy[ylung+1];
+
+    for(i = 1;i <= xlung;i++)
+        vx[i] = x[i-1] - 48;
+
+    for(i = 1;i <= ylung;i++)
+        vy[i] = y[i-1] - 48;
+
+
+
+    int diferenta = abs(xlung - ylung);
+
+    for(i = ylung; i >= 1; i--)
+    {
+        vx[i+diferenta] = vx[i+diferenta] + vy[i];
+        if(vx[i+diferenta]>9)
+        {
+            vx[i+diferenta] = vx[i+diferenta]%10;
+            vx[i+diferenta-1]++;
+        }
+    }
+
+    for(i = 0;i <= xlung;i++)
+        printf("%d ",vx[i]);
+
+    return 0;
+}
