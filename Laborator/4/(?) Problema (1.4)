@@ -1,5 +1,5 @@
-#include <iostream>
-#include <cstring>
+#include <stdio.h>
+#include <string.h>
 
 using namespace std;
 
@@ -24,6 +24,7 @@ int main()
     for(i = 1;i <= ylung;i++)
         vy[i] = y[i-1] - 48;
 
+    int start = vx[0] = 0;
 
 
     int diferenta = abs(xlung - ylung);
@@ -34,12 +35,25 @@ int main()
         if(vx[i+diferenta]>9)
         {
             vx[i+diferenta] = vx[i+diferenta]%10;
-            vx[i+diferenta-1]++;
+            int j = i;
+            while(1)
+            {
+                vx[j+diferenta-1]++;
+                if(vx[j+diferenta-1] > 9)
+                {
+                    vx[j+diferenta-1] = vx[j+diferenta-1]%10;
+                    j--;
+                }
+                else break;
+            }
+
         }
     }
 
-    for(i = 0;i <= xlung;i++)
-        printf("%d ",vx[i]);
+    if(vx[0] == 0) start = 1;
+    for(i = start;i <= xlung;i++)
+        printf("%d",vx[i]);
+
 
     return 0;
 }
