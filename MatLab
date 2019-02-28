@@ -20,5 +20,18 @@ err_rel = abs(err_abs ./ val_calc);
 err_rel
 
 
+--------------------------------------------
+%Alg. Euclid
+
+while b>0
+    r = mod(a,b);
+    a = b;
+    b = r;
+end
+
+display(a);
+
+
+
 
 
