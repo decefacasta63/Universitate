@@ -43,20 +43,18 @@ int main()
         nr_bucle = d[i]/2;
         muchie_libera = d[i]%2;
 
-        //Cazul in care toate muchiile sunt bucle
-        if(muchie_libera == 0)
-        {
+        //Adauga buclele in lista
+
             muchie.in = muchie.fin = i;
             muchie.mult = nr_bucle;
 
             E.push_back(muchie);
-        }
 
         //Cazul in care o muchie nu face parte dintr-o bucla
         //Pastreaza o muchie de la acest nod si o ataseaza la urmatorul nod cu o muchie libera
         if((muchie_libera) == 1 && (nod_precedent == -1)) nod_precedent = i;
 
-        if((muchie_libera == 1) && (nod_precedent != -1))
+        if((muchie_libera == 1) && (nod_precedent != -1) && (nod_precedent != i))
         {
             muchie.in = nod_precedent;
             muchie.fin = i;
@@ -77,6 +75,19 @@ int main()
     }
 
 
+//////////////////////////////////////////////////////////////////////////////
+
+    //PENTRU CONSTRUIREA GRAFULUI FARA BUCLE
+    //Utilizam graful de mai sus si eliminam buclele
+
+    //if(2 * grad(maxim dintre noduri) > suma_gradelor) => Nu se poate construi.
+
+
     return 0;
 }
+
+
+
+
+
 
